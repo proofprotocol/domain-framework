@@ -13,4 +13,4 @@ Defines the ten domains of independently verifiable proof under the Proof Protoc
 
 ## License
 
-CC BY 4.0 — Attribution to Craig Ellrod / Nebulonium, Inc. / HACKERverse required.
+CC BY 4.0 — Attribution to Craig Ellrod / Nebulonium, Inc. required.
