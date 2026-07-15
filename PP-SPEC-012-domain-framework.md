@@ -18,7 +18,7 @@ This specification defines the ten domains of the Proof Protocol™ Domain Frame
 
 ## Status of This Document
 
-Published specification of the Proof Protocol™. CC BY 4.0 — attribution to Craig Ellrod / Nebulonium, Inc. / HACKERverse required.
+Published specification of the Proof Protocol™. CC BY 4.0 — attribution to Craig Ellrod / Nebulonium, Inc. required.
 
 ---
 
@@ -235,4 +235,4 @@ Castle Rock, Colorado
 
 ---
 
-*CC BY 4.0 — Attribution to Craig Ellrod / Nebulonium, Inc. / HACKERverse required.*
+*CC BY 4.0 — Attribution to Craig Ellrod / Nebulonium, Inc. required.*
