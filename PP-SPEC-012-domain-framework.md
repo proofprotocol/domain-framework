@@ -96,7 +96,7 @@ Efficacy is the domain no other published standard defines as of 2026-07-14. It 
 
 **Why it matters:** In agentic AI systems, attribution is the hardest accountability problem. An agent acting on behalf of a human principal, delegating to a subagent, which calls a tool — each step must be independently attributable. Without attribution proof, accountability is a fiction.
 
-**Key mechanism:** HV-A2P™ defines proof requirements at each delegation boundary. Each agent-to-agent interaction requires proof exchange before trust is established. The delegation chain is assembled into the ProofBundle™.
+**Key mechanism:** PP-A2P™ defines proof requirements at each delegation boundary. Each agent-to-agent interaction requires proof exchange before trust is established. The delegation chain is assembled into the ProofBundle™.
 
 **Implementing specifications:** PP-SPEC-007, PP-SPEC-005
 
@@ -186,7 +186,7 @@ AgenTwin™ witnesses the full execution chain from outside the agent trust boun
 
 Causality is the domain that makes AI accountable at the depth regulators and insurers will eventually require. No other architecture produces it.
 
-**Key mechanism:** AgenTwin™ assembles the full causal chain across agent-to-agent interactions. HV-A2P™ requires proof exchange at each step, creating a verifiable record of what authorized what.
+**Key mechanism:** AgenTwin™ assembles the full causal chain across agent-to-agent interactions. PP-A2P™ requires proof exchange at each step, creating a verifiable record of what authorized what.
 
 **Implementing specifications:** PP-SPEC-007, PP-SPEC-005, PP-SPEC-011
 
@@ -199,7 +199,7 @@ Causality is the domain that makes AI accountable at the depth regulators and in
 | 01 | Containment | Did it stay in bounds? | Independent witness outside trust boundary |
 | 02 | Efficacy | Did it actually work? | PES — Blocked / (Blocked + Missed) × 100 |
 | 03 | Integrity | Was it tampered with? | NIST Beacon pre-execution commitment |
-| 04 | Attribution | Who authorized what? | HV-A2P™ delegation chain proof |
+| 04 | Attribution | Who authorized what? | PP-A2P™ delegation chain proof |
 | 05 | Provenance | Where did this proof come from? | Custody chain from commitment to seal |
 | 06 | Portability | Can anyone verify this anywhere? | Self-contained offline-verifiable ProofBundle™ |
 | 07 | Continuity | Does it hold over time? | ProofStamp™ lapse condition |
