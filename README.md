@@ -10,6 +10,11 @@
 **Repository:** https://github.com/proofprotocol  
 **Published:** 2026-07-14  
 
+## Cite as
+
+Ellrod, C. (2026). PP-SPEC-012: Proof Protocol Domain Framework.
+Proof Economy Standards Alliance (PESA). https://doi.org/10.5281/zenodo.21379780
+
 ---
 
 ## Abstract
