@@ -57,7 +57,7 @@ This specification defines the ten domains, their definitions, their core questi
 
 **Why it matters:** Containment is the most fundamental proof requirement. Logs cannot answer the containment question - they are produced by the system being observed. Containment proof requires an independent witness operating outside the subject's trust boundary.
 
-**Key mechanism:** AgenTwin™ witnesses execution from outside the agent trust boundary, assembling proof that the subject operated within authorized parameters.
+**Key mechanism:** ProofWitness™ witnesses execution from outside the agent trust boundary, assembling proof that the subject operated within authorized parameters.
 
 **Implementing specifications:** PP-SPEC-001, PP-SPEC-005
 
@@ -69,13 +69,13 @@ This specification defines the ten domains, their definitions, their core questi
 
 **Definition:** Independently verifiable proof that security controls actually worked under adversarial conditions, expressed as a numeric score.
 
-**Why it matters:** Efficacy is the only domain with a published formula. PES (Proof of Efficacy Score) = Blocked / (Blocked + Missed) × 100. OBSERVED and IRRELEVANT cases are excluded from the denominator. A product that cannot produce a PES score under adversarial conditions has not been tested - it has been described.
+**Why it matters:** Efficacy is the only domain with a published formula. PES (Proof of Efficacy Score) is a pair published together: Containment = Blocked / (Blocked + Observed + Missed) × 100, and Detection = Detected / (Blocked + Observed + Missed) × 100. Only pre-declared IRRELEVANT cases are excluded from the denominator (PP-SPEC-006). A product that cannot produce a PES score under adversarial conditions has not been tested - it has been described.
 
 Efficacy is the domain no other published standard defines as of 2026-07-14. It is the commercial forcing function of the Proof Economy™: buyers will ask for a score. Only a ProofStamp™-certified run produces one.
 
-**Key mechanism:** PES formula applied to Arena7™ execution results, witnessed by AgenTwin™, sealed by ProofProtocol.
+**Key mechanism:** PES formula applied to Arena7™ execution results, witnessed by ProofWitness™, sealed by ProofProtocol.
 
-**Reference implementation:** Pipelock v3.0.0 - PR-2026-00028 - PES 99.2%, Detection 100%, FP 4.5%, 164 applicable cases.
+**Reference implementation:** Pipelock v3.0.0 - PR-2026-08338 - Containment 73.2%, Detection 100.0%, 164 in-scope cases.
 
 **Implementing specifications:** PP-SPEC-001, PP-SPEC-006
 
@@ -161,7 +161,7 @@ Efficacy is the domain no other published standard defines as of 2026-07-14. It 
 
 Adversariality is the proof that the attack actually ran - witnessed independently, committed to NIST Beacon, sealed on-chain. No other published standard defines Adversariality as a proof domain as of 2026-07-14.
 
-**Key mechanism:** Arena7™ executes adversarial TTPs under NIST Beacon pre-execution commitment. AgenTwin™ witnesses from outside the trust boundary. Results are sealed in ProofRegister™. The proof is the execution record, not a description of it.
+**Key mechanism:** Arena7™ executes adversarial TTPs under NIST Beacon pre-execution commitment. ProofWitness™ witnesses from outside the trust boundary. Results are sealed in ProofRegister™. The proof is the execution record, not a description of it.
 
 **Implementing specifications:** PP-SPEC-001, PP-SPEC-005, PP-SPEC-006
 
@@ -189,11 +189,11 @@ Adversariality is the proof that the attack actually ran - witnessed independent
 
 **Why it matters:** Causality is the domain that emerges from agentic AI at scale. When an autonomous agent executes thousands of actions in a pipeline, the question is not just what happened - it is what caused what. Without causality proof, post-incident investigation is reconstruction, not evidence.
 
-AgenTwin™ witnesses the full execution chain from outside the agent trust boundary, assembling receipts, pubkeys, and verifier output at each step. The ProofBundle™ is the causal chain, sealed and independently verifiable.
+ProofWitness™ witnesses the full execution chain from outside the agent trust boundary, assembling receipts, pubkeys, and verifier output at each step. The ProofBundle™ is the causal chain, sealed and independently verifiable.
 
 Causality is the domain that makes AI accountable at the depth regulators and insurers will eventually require. No other architecture produces it.
 
-**Key mechanism:** AgenTwin™ assembles the full causal chain across agent-to-agent interactions. PP-A2P™ requires proof exchange at each step, creating a verifiable record of what authorized what.
+**Key mechanism:** ProofWitness™ assembles the full causal chain across agent-to-agent interactions. PP-A2P™ requires proof exchange at each step, creating a verifiable record of what authorized what.
 
 **Implementing specifications:** PP-SPEC-007, PP-SPEC-005, PP-SPEC-011
 
@@ -204,7 +204,7 @@ Causality is the domain that makes AI accountable at the depth regulators and in
 | # | Domain | Core Question | Key Mechanism |
 |---|--------|--------------|---------------|
 | 01 | Containment | Did it stay in bounds? | Independent witness outside trust boundary |
-| 02 | Efficacy | Did it actually work? | PES - Blocked / (Blocked + Missed) × 100 |
+| 02 | Efficacy | Did it actually work? | PES - Containment and Detection over Blocked + Observed + Missed |
 | 03 | Integrity | Was it tampered with? | NIST Beacon pre-execution commitment |
 | 04 | Attribution | Who authorized what? | PP-A2P™ delegation chain proof |
 | 05 | Provenance | Where did this proof come from? | Custody chain from commitment to seal |
@@ -212,7 +212,7 @@ Causality is the domain that makes AI accountable at the depth regulators and in
 | 07 | Continuity | Does it hold over time? | ProofStamp™ lapse condition |
 | 08 | Adversariality | Was it actually attacked? | Arena7™ execution under NIST Beacon commitment |
 | 09 | Auditability | Can a third party verify independently? | Public ProofRegister™ + Bitcoin OP_RETURN |
-| 10 | Causality | What caused what? | AgenTwin™ full chain witness assembly |
+| 10 | Causality | What caused what? | ProofWitness™ full chain witness assembly |
 
 ---
 
